@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap"; 
 import Home from "./Home";
-import About from "./About";
 import Services from "./Services";
-import Contact from "./Contact";
+import { Gallery } from "./Gallery";
+import { Booking } from "./Booking";
+import { Stylist } from "./Stylist";
+import { Profile } from "./Profile";
 
 function NavigationBar() {   
     const [tabs, setTabs] = useState('Home'); 
@@ -12,12 +14,16 @@ function NavigationBar() {
         switch (tabs) {
             case 'Home':
                 return <Home />;
-            case 'About':
-                return <About />;
+            case 'Gallery':
+                return <Gallery />;
             case 'Services':
                 return <Services />;
-            case 'Contact': 
-                return <Contact />;
+            case 'Booking': 
+                return <Booking />;
+            case 'Stylist':
+                return <Stylist/>;
+            case 'Profiles':
+                return <Profile/>
             default:
                 return <Home />; 
         }
@@ -33,9 +39,10 @@ function NavigationBar() {
                 <Navbar.Collapse id="basic-navbar-nav"> 
                     <Nav className="me-auto">
                         <Nav.Link href="#home" onClick={() => setTabs('Home')}>Home</Nav.Link>
-                        <Nav.Link href="#about" onClick={() => setTabs('About')}>About</Nav.Link>
+                        <Nav.Link href="#gallery" onClick={() => setTabs('Gallery')}>Gallery</Nav.Link> 
                         <Nav.Link href="#services" onClick={() => setTabs('Services')}>Services</Nav.Link>
-                        <Nav.Link href="#contact" onClick={() => setTabs('Contact')}>Contact</Nav.Link> 
+                        <Nav.Link href="#booking" onClick={() => setTabs('Booking')}>Booking</Nav.Link> 
+                        <Nav.Link href="#Stylist" onClick={() => setTabs('Stylist')}>Stylist </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
