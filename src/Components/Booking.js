@@ -10,7 +10,9 @@ function Booking(){
 return(
   <>
   <Container>
-    <h2>Book Your Appointment</h2>{ok && (<Alert></Alert>)}
+    <h2>Book Your Appointment</h2>{ok && (<Alert>
+      Thanks {form.name}! Booking for {form.service} on {form.date}
+    </Alert>)}
     <Form>
       <Form.Group className="mb-3">
         <Form.Label>Name</Form.Label>
