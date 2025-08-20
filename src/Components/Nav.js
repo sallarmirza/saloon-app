@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Home from "./Home";
-import Services from "./Services";
 import { Gallery } from "./Gallery";
 import { Booking } from "./Booking";
 import { Stylist } from "./Stylist";
 import { Profile } from "./Profile";
+import { ServiceCard } from "./ServiceCard";
 
 function NavigationBar() {
   const [tabs, setTabs] = useState("Home");
@@ -17,7 +17,7 @@ function NavigationBar() {
       case "Gallery":
         return <Gallery />;
       case "Services":
-        return <Services />;
+        return <ServiceCard />;
       case "Booking":
         return <Booking />;
       case "Stylist":
@@ -53,13 +53,13 @@ function NavigationBar() {
               Booking
             </Nav.Link>
             <Nav.Link href="#Stylist" onClick={() => setTabs("Stylist")}>
-              Stylist{" "}
+              Stylist
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Container fluid className="py-3">
-        {showTabs()}
+      <Container fluid className="py-4">
+        {React.cloneElement(showTabs(),{setTabs})}
       </Container>
     </div>
   );
